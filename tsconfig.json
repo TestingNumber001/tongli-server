@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "jsx": "react-jsx",
+        "target": "ESNext"
+    },
+
+    "include": [
+        "src\\**\\*"
+    ],
+
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJs"
+        }
+    }
+}

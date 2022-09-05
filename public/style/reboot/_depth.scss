@@ -1,0 +1,17 @@
+
+
+* {
+    --shadow-depth-0: 0 0 0 transparent;
+    --shadow-depth-4: 0 1.6px 3.6px rgba(0, 0, 0, 0.132), 0 0.3px 0.9px rgba(0, 0, 0, 0.108);
+    --shadow-depth-8: 0 3.2px 7.2px rgba(0, 0, 0, 0.132), 0 0.6px 1.8px rgba(0, 0, 0, 0.108);
+    --shadow-depth-16: 0 6.4px 14.4px rgba(0, 0, 0, 0.132), 0 1.2px 3.6px rgba(0, 0, 0, 0.108);
+    --shadow-depth-64: 0 25.6px 57.6px rgba(0, 0, 0, 0.22), 0 4.8px 14.4px rgba(0, 0, 0, 0.18);
+    --shadow-depth-4-inset: inset 0 1.6px 3.6px rgba(0, 0, 0, 0.132), inset 0 0.3px 0.9px rgba(0, 0, 0, 0.108);
+    --shadow-depth-8-inset: inset 0 3.2px 7.2px rgba(0, 0, 0, 0.132), inset 0 0.6px 1.8px rgba(0, 0, 0, 0.108);
+    --shadow-depth-16-inset: inset 0 6.4px 14.4px rgba(0, 0, 0, 0.132), inset 0 1.2px 3.6px rgba(0, 0, 0, 0.108);
+    --shadow-depth-64-inset: inset 0 25.6px 57.6px rgba(0, 0, 0, 0.22), inset 0 4.8px 14.4px rgba(0, 0, 0, 0.18);
+    --filter-shadow-depth-4: drop-shadow(0 1.6px 3.6px rgba(0, 0, 0, 0.132)) drop-shadow(0 0.3px 0.9px rgba(0, 0, 0, 0.108));
+    --filter-shadow-depth-8: drop-shadow(0 3.2px 7.2px rgba(0, 0, 0, 0.132)) drop-shadow(0 0.6px 1.8px rgba(0, 0, 0, 0.108));
+    --filter-shadow-depth-16: drop-shadow(0 6.4px 14.4px rgba(0, 0, 0, 0.132)) drop-shadow(0 1.2px 3.6px rgba(0, 0, 0, 0.108));
+    --filter-shadow-depth-64: drop-shadow(0 25.6px 57.6px rgba(0, 0, 0, 0.22)) drop-shadow(0 4.8px 14.4px rgba(0, 0, 0, 0.18));
+}

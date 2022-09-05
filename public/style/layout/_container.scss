@@ -1,0 +1,50 @@
+* {
+    --width-container: 100%;
+    --width-container-small: 100%;
+    --width-container-medium: 100%;
+    --width-container-large: 100%;
+    --width-container-extra-large: 100%;
+    --width-container-extra-extra-large: 100%;
+    --width-container-fluid: 100%;
+    
+    --max-width-container-small: 540px;
+    --max-width-container-medium: 720px;
+    --max-width-container-large: 960px;
+    --max-width-container-extra-large: 1140px;
+    --max-width-container-extra-extra-large: 1320px;
+
+    @media screen and ( min-width: 576px ) {
+        --width-container: 540px;
+        --width-container-small: 540px;
+    }
+    
+    @media screen and ( min-width: 768px ) {
+        --width-container: 720px;
+        --width-container-small: 720px;
+        --width-container-medium: 720px;
+    }
+    
+    @media screen and ( min-width: 992px ) {
+        --width-container: 960px;
+        --width-container-small: 960px;
+        --width-container-medium: 960px;
+        --width-container-large: 960px;
+    }
+    
+    @media screen and ( min-width: 1200px ) {
+        --width-container: 1140px;
+        --width-container-small: 1140px;
+        --width-container-medium: 1140px;
+        --width-container-large: 1140px;
+        --width-container-extra-large: 1140px;
+    }
+    
+    @media screen and ( min-width: 1400px ) {
+        --width-container: 1320px;
+        --width-container-small: 1320px;
+        --width-container-medium: 1320px;
+        --width-container-large: 1320px;
+        --width-container-extra-large: 1320px;
+        --width-container-extra-extra-large: 1320px;
+    }
+}

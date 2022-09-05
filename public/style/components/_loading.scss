@@ -1,0 +1,345 @@
+.loading {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+    position: relative;
+    animation: slide-fade-in .25s ease-in 1 both;
+}
+
+.shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-neutral-lighter-alt);
+    z-index: 0;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: linear-gradient(90deg, var(--color-neutral-lighter-alt),
+                var(--color-neutral-lighter),
+                var(--color-neutral-lighter-alt));
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        z-index: -1;
+
+        animation: shimmer 2s ease-in-out infinite;
+
+        @keyframes shimmer {
+            from {
+                transform: translate(-100%);
+            }
+
+            to {
+                transform: translate(100%);
+            }
+        }
+    }
+
+    &-top-left-corner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        fill: var(--color-white);
+        width: 4px;
+        height: 4px;
+    }
+
+    &-top-right-corner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        fill: var(--color-white);
+        width: 4px;
+        height: 4px;
+    }
+
+    &-bottom-left-corner {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        fill: var(--color-white);
+        width: 4px;
+        height: 4px;
+    }
+
+    &-bottom-right-corner {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        fill: var(--color-white);
+        width: 4px;
+        height: 4px;
+    }
+}
+
+.loading-bookset {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0 calc(50% - var(--width-container) / 2);
+    border-style: solid;
+    border-color: var(--color-white);
+    overflow: hidden;
+
+    .loading-bookset-list-container {
+        display: flex;
+        grid: 1fr / auto auto;
+    }
+
+    .loading-bookset-list {
+        display: grid;
+        grid: auto / repeat(auto-fill, minmax(200px, 1fr) 1rem) minmax(200px, 1fr) 0 [end];
+        grid-auto-rows: 0;
+        border-top: .5rem solid var(--color-white);
+        overflow: hidden;
+        flex: 1 0 auto;
+        max-width: 100%;
+    }
+
+    .loading-bookset-gap {
+        background-color: var(--color-white);
+    }
+
+    .loading-bookset-name {
+        display: flex;
+        border-left: .5rem solid var(--color-white);
+        border-right: .5rem solid var(--color-white);
+        border-bottom: 1px solid var(--color-neutral-light);
+
+        &::after {
+            content: '';
+            display: block;
+            flex: 1 1 0;
+            min-width: 0;
+            background-color: white;
+        }
+    }
+
+    .loading-bookset-text {
+        display: block;
+        width: 250px;
+        max-width: 100%;
+        height: var(--font-size-heading-3);
+        border-top: .5em solid var(--color-white);
+        border-bottom: .5em solid var(--color-white);
+        box-sizing: content-box;
+        position: relative;
+    }
+}
+
+.loading-book {
+    display: flex;
+    flex-direction: column;
+    border: .5rem solid var(--color-white);
+    position: relative;
+    border-radius: 2px;
+    transition: .25s;
+
+    .loading-book-img {
+        width: 100%;
+        aspect-ratio: 21 / 29.7;
+        position: relative;
+    }
+
+    .loading-book-heading {
+        width: 100%;
+        height: 1rem;
+        border-top: .25em solid var(--color-white);
+        border-bottom: .25em solid var(--color-white);
+        box-sizing: content-box;
+        position: relative;
+    }
+}
+
+.loading-book-details {
+    padding: 0 calc(50% - var(--width-container) / 2);
+    margin-bottom: 1rem;
+
+    .loading-book-details-container {
+        display: flex;
+        grid: 1fr / minmax(200px, 50%) 1fr;
+    }
+
+    .loading-book-text {
+        display: block;
+        max-width: 100%;
+        height: 1em;
+        border-top: .25em solid var(--color-white);
+        border-bottom: .25em solid var(--color-white);
+        box-sizing: content-box;
+        position: relative;
+    }
+
+    .loading-book-cover {
+        border-bottom: 1rem solid var(--color-white);
+        width: 400px;
+        min-width: 200px;
+        max-width: 50%;
+        aspect-ratio: 21 / 29.7;
+        border-bottom: 0;
+        border-right: 1rem solid var(--color-white);
+        position: relative;
+    }
+
+    .loading-book-info {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0;
+        min-width: 0;
+
+        .loading-book-title {
+            display: flex;
+            font-size: var(--font-size-heading-2);
+
+            &::after {
+                content: '';
+                display: block;
+                flex: 1 1 0;
+                min-width: 0;
+                background-color: var(--color-white);
+            }
+
+            .loading-book-text {
+                width: 300px;
+            }
+        }
+
+        .loading-book-authors {
+            display: flex;
+
+            &::after {
+                content: '';
+                display: block;
+                flex: 1 1 0;
+                min-width: 0;
+                background-color: var(--color-white);
+            }
+
+            .loading-book-text {
+                width: 100px;
+            }
+        }
+
+        .loading-book-intro {
+            margin: 0;
+            padding: 1rem;
+            color: var(--color-neutral-primary-alt);
+            text-align: justify;
+            line-height: 1.25em;
+            border-top: 1rem solid var(--color-white);
+            min-height: 100px;
+            position: relative;
+        }
+    }
+
+    .loading-book-vols {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        border-top: 1rem solid var(--color-white);
+        flex: 1 1 0;
+        min-height: 0;
+
+        &-header {
+            display: flex;
+
+            &::after {
+                content: '';
+                display: block;
+                flex: 1 1 0;
+                min-width: 0;
+                background-color: var(--color-white);
+            }
+
+            .loading-book-text {
+                width: 150px;
+                border-width: .5rem 0;
+            }
+        }
+        
+        &-list {
+            flex: 1 1 0;
+            min-height: 0;
+            border-top: .5rem solid var(--color-white);
+            position: relative;
+        }
+    }
+}
+
+
+.loading-account-info {
+    display: flex;
+    border: 1px solid var(--color-neutral-quaternary-alt);
+    border-radius: 4px;
+
+    .loading-user-avatar {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        border: 1rem solid var(--color-white);
+        box-sizing: content-box;
+
+        svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--color-white);
+        }
+    }
+
+    .loading-user-detail {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        border-right: 1rem solid var(--color-white);
+    }
+
+    .loading-user-nickname {
+        display: flex;
+        font-size: 20px;
+
+        .loading-text {
+            width: 200px;
+        }
+
+        .loading-gap {
+            flex: 1 1 0;
+            background-color: var(--color-white);
+        }
+    }
+
+    .loading-user-account {
+        display: flex;
+        flex-grow: 1;
+        color: var(--color-neutral-tertiary);
+        font-size: 14px;
+        border-top: .5rem solid var(--color-white);
+
+        .loading-text {
+            width: 150px;
+        }
+
+        .loading-gap {
+            flex: 1 1 0;
+            background-color: var(--color-white);
+        }
+    }
+
+    .loading-text {
+        display: block;
+        max-width: 100%;
+        height: 1em;
+        border-top: .25em solid var(--color-white);
+        border-bottom: .25em solid var(--color-white);
+        box-sizing: content-box;
+        position: relative;
+    }
+
+    .loading-gap {
+        flex-basis: 100%;
+        background-color: var(--color-white);
+    }
+}

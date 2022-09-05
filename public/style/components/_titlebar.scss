@@ -1,0 +1,48 @@
+#titlebar {
+    -webkit-app-region: drag;
+    display: grid;
+    grid: 1fr/ 1fr auto;
+    background-color: var(--color-neutral-light);
+    
+    .title {
+        display: flex;
+        align-items: center;
+        padding: 0 .5rem;
+
+        span {
+            font-size: 12px;
+            font-weight: bolder;
+            color: var(--color-neutral-secondary-alt);
+        }
+    }
+
+    .control-button {
+        -webkit-app-region: no-drag;
+        border: 0;
+        background-color: var(--color-neutral-light);
+        width: 45px;
+        height: 30px;
+        font-family: 'codicon';
+        cursor: pointer;
+        transition: .125s;
+        font-size: 14px;
+
+        &:hover {
+            background-color: var(--color-neutral-quaternary);
+            
+            &:last-child {
+                color: var(--color-white);
+                background-color: var(--color-red);
+            }
+        }
+
+        &:active {
+            background-color: var(--color-neutral-tertiary-alt);
+            
+            &:last-child {
+                color: var(--color-neutral-light);
+                background-color: var(--color-red-dark);
+            }
+        }
+    }
+}

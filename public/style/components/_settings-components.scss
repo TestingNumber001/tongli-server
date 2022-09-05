@@ -1,0 +1,184 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .5rem;
+}
+
+.form-caption {
+    margin: 0;
+    color: var(--color-neutral-primary);
+}
+
+.error-message {
+    text-align: center;
+    color: var(--color-shared-red-10);
+}
+
+.text-box {
+    padding-top: .375rem;
+    position: relative;
+    display: block;
+
+    .text-box-input {
+        width: 100%;
+        background: none;
+        font-size: 1rem;
+        padding: .75rem;
+        border-radius: 4px;
+        border: 1px solid var(--color-neutral-tertiary);
+        outline: 1px solid transparent;
+        transition-duration: .25s;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:focus {
+            border-color: var(--color-theme-secondary);
+            outline-color: var(--color-theme-secondary);
+        }
+
+        &:focus,
+        &:not(:placeholder-shown) {
+            ~.text-box-placeholder {
+                top: 0;
+                left: .5rem;
+                font-size: .75rem;
+                padding: 0 .25rem;
+                transform: none;
+            }
+        }
+
+        &:focus {
+            ~.text-box-placeholder {
+                color: var(--color-theme-secondary);
+            }
+        }
+    }
+
+    .text-box-placeholder {
+        background-color: var(--color-white);
+        position: absolute;
+        top: calc(50% + .375rem / 2);
+        left: .75rem;
+        color: var(--color-neutral-secondary-alt);
+        line-height: 1;
+        transform: translateY(-50%);
+        transition-duration: .25s;
+        z-index: 0;
+        cursor: text;
+    }
+
+    &.error-require {
+        
+        .text-box-input:placeholder-shown {
+            border-color: var(--color-shared-red-10);
+            color: var(--color-shared-red-10);
+
+            &:focus {    
+                outline-color: var(--color-shared-red-10);
+            }
+
+            ~.text-box-placeholder {
+                color: var(--color-shared-red-10);
+            }
+        }
+    }
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    &-fill {
+        * {
+            flex-grow: 1;
+        }
+    }
+}
+
+.button {
+    display: flex;
+    min-width: 3rem;
+    font-size: 14px;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .25s;
+    outline-offset: -4px;
+    outline: 1px solid transparent;
+
+    & {
+        background-color: var(--color-white);
+        border: 1px solid var(--color-neutral-tertiary);
+        color: var(--color-neutral-secondary);
+        
+        &:hover {
+            background-color: var(--color-neutral-lighter);
+            color: var(--color-neutral-primary-alt);
+        }
+
+        &:active {
+            background-color: var(--color-neutral-light);
+            color: var(--color-neutral-primary);
+        }
+    }
+}
+
+.link {
+    color: var(--color-theme-primary);
+    text-decoration: underline transparent;
+    text-underline-offset: .2rem;
+    cursor: pointer;
+    transition-duration: .25s, .125s;
+    transition-property: color, text-decoration;
+
+    &:hover {
+        text-decoration: underline var(--color-theme-primary);
+        color: var(--color-theme-dark-alt);
+    }
+
+    &:active {
+        text-decoration: underline var(--color-theme-dark-alt);
+        color: var(--color-theme-dark);
+    }
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color-neutral-quaternary-alt);
+    border-radius: 4px;
+
+    .user-avatar {
+        width: 100px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50px;
+        box-shadow: var(--shadow-depth-4);
+    }
+    
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        gap: .5rem;
+    }
+
+    .user-detail {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .user-account {
+        flex-grow: 1;
+        color: var(--color-neutral-tertiary);
+        font-size: 14px;
+    }
+}
